@@ -8,17 +8,14 @@ handlers:
 - url: /assets/(.*\.css)$
   static_files: dist/assets/\1
   upload: dist/assets/(.*\.css)$
-  mime_type: text/css
 
 - url: /assets/(.*\.js)$
   static_files: dist/assets/\1
   upload: dist/assets/(.*\.js)$
-  mime_type: application/javascript
  
 - url: /assets/(.*\.svg)$
   static_files: dist/assets/\1
   upload: dist/assets/(.*\.svg)$
-  mime_type: image/svg+xml
 
 - url: /.*
   static_files: dist/index.html
