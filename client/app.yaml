@@ -5,10 +5,17 @@ handlers:
   static_files: dist/\1
   upload: dist/(.*\.(html|css|js|json|svg))$
 
-- url: /dist/assets/(.*)$
+- url: /dist/assets/(.*\.css)$
   static_files: dist/assets/\1
-  upload: dist/assets/(.*)$
+  upload: dist/assets/(.*\.css)$
+  mime_type: text/css
+
+- url: /dist/assets/(.*\.js)$
+  static_files: dist/assets/\1
+  upload: dist/assets/(.*\.js)$
+  mime_type: application/javascript
 
 - url: /.*
   static_files: dist/index.html
   upload: dist/index.html
+
