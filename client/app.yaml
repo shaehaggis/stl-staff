@@ -1,7 +1,7 @@
 runtime: nodejs18
 
 handlers:
-- url: /dist/(.*\.(html|css|js|json|svg))$
+- url: /(.*\.(html|css|js|json|svg))$
   static_files: dist/\1
   upload: dist/(.*\.(html|css|js|json|svg))$
 
@@ -14,6 +14,11 @@ handlers:
   static_files: dist/assets/\1
   upload: dist/assets/(.*\.js)$
   mime_type: application/javascript
+ 
+- url: /assets/(.*\.svg)$
+  static_files: dist/assets/\1
+  upload: dist/assets/(.*\.svg)$
+  mime_type: image/svg+xml
 
 - url: /.*
   static_files: dist/index.html
