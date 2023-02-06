@@ -1,0 +1,14 @@
+runtime: nodejs18
+
+handlers:
+- url: /(.*\.(html|css|js|json|svg))$
+  static_files: \1
+  upload: (.*\.(html|css|js|json|svg))$
+
+- url: /assets/(.*)$
+  static_files: assets/\1
+  upload: assets/(.*)$
+
+- url: /.*
+  static_files: index.html
+  upload: index.html
