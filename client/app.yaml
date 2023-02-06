@@ -2,13 +2,21 @@ runtime: nodejs18
 
 handlers:
 - url: /(.*\.(html|css|js|json|svg))$
-  static_files: \1
-  upload: (.*\.(html|css|js|json|svg))$
+  static_files: dist/\1
+  upload: dist/(.*\.(html|css|js|json|svg))$
 
-- url: /assets/(.*)$
-  static_files: assets/\1
-  upload: assets/(.*)$
+- url: /assets/(.*\.css)$
+  static_files: dist/assets/\1
+  upload: dist/assets/(.*\.css)$
+
+- url: /assets/(.*\.js)$
+  static_files: dist/assets/\1
+  upload: dist/assets/(.*\.js)$
+ 
+- url: /assets/(.*\.svg)$
+  static_files: dist/assets/\1
+  upload: dist/assets/(.*\.svg)$
 
 - url: /.*
-  static_files: index.html
-  upload: index.html
+  static_files: dist/index.html
+  upload: dist/index.html
