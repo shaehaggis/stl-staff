@@ -20,4 +20,3 @@ handlers:
 - url: /.*
   static_files: dist/index.html
   upload: dist/index.html
-
